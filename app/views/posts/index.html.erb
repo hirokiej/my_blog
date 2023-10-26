@@ -1,7 +1,7 @@
 <title>ブログ</title>
 <% @post.each do |post| %>
 
-    <h2><%= link_to post.title, post_path(post) %></h2>
-    <p><%= link_to "削除", post_path(post) , data:{turbo_method: "delete", turbo_confirm: "削除してもいいですか？"} %></p>
+    <h2 class="article-title"><%= link_to post.title, post_path(post) %></h2>
+    <p class="delete-button"><%= link_to "削除", post_path(post) , data:{turbo_method: "delete", turbo_confirm: "削除してもいいですか？"} %></p>
     <p><%= truncate(post.content, length: 20) %></p>
 <% end %>

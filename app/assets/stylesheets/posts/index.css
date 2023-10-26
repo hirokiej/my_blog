@@ -1,0 +1,9 @@
+.article-title{
+    display: flex;
+    align-items: center;
+}
+
+.delete-button{
+    margin-left: 5px;
+    font-size: 40px;
+}
