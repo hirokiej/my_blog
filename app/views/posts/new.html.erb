@@ -1,0 +1,18 @@
+<h1>新しい記事を書く</h1>
+<%= form_for :post, url: posts_path do |f| %>
+
+<p>
+<%= f.label :title, "タイトル"%>
+<%= f.text_field :title %>
+</p>
+
+<p>
+ <%= f.label :content, "内容" %>
+ <%= f.text_area :content %>
+</p>
+
+<p>
+ <%= f.submit "投稿する" %>
+</p>
+
+<% end %>
