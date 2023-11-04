@@ -1,0 +1,20 @@
+<% if @post.new? %>
+  <%= form_for :post, url: posts_path do |f| %>
+<% else %>
+  <%= form_for @post, url: post_path(@post), method: :patch do |f| %>
+<% end %>
+   <p>
+    <%= f.label :title, "タイトル" %>
+    <%= f.text_field :title %>
+    </p>
+
+    <p>
+     <%= f.label :content, "内容" %>
+     <%= f.text_area :content %>
+    </p>
+
+    <p>
+     <%= f.submit "投稿する" %>
+    </p>
+
+<% end %>

@@ -27,6 +27,21 @@ class PostsController < ApplicationController
         flash[:success]= "投稿を削除しました"
     end
 
+    def edit
+        @post = Post.find(params[:id])
+    end
+    
+    def update
+        @post = Post.find(params[:id])
+        if @post.update(post_params)
+           flash[:success]= "投稿を変更しました"
+           redirect_to posts_path
+        else
+          flash[:success] = "投稿に失敗しました"
+          render "edit",status: :unprocessable_entity
+        end
+    end
+
     private
 
     def post_params
