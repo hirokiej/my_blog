@@ -1,6 +1,5 @@
-<%= provide(:title, "新規記事作成") %>
-<%= provide(:button, "ボタン") %>
-<%= provide(:url, new_post_path) %>
+<% provide(:button, "投稿する") %>
+<% provide(:url, posts_path) %>
 <h1>新しい記事を書く</h1>
 <%= render "form" %>
 

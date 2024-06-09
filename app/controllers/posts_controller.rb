@@ -30,15 +30,15 @@ class PostsController < ApplicationController
     def edit
         @post = Post.find(params[:id])
     end
-    
+
     def update
         @post = Post.find(params[:id])
         if @post.update(post_params)
            flash[:success]= "投稿を変更しました"
            redirect_to posts_path
         else
-          flash[:success] = "投稿に失敗しました"
-          render "edit",status: :unprocessable_entity
+          flash[:error] = "投稿に失敗しました"
+          render "edit"
         end
     end
 

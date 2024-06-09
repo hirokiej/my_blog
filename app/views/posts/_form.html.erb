@@ -1,4 +1,4 @@
-  <%= form_for :post, url: posts_path do |f| %>
+  <%= form_for @post, url: yield(:url) do |f| %>
 
    <p>
     <%= f.label :title, "タイトル" %>
@@ -11,7 +11,7 @@
     </p>
 
     <p>
-     <%= f.submit "投稿する" %>
+     <%= f.submit yield(:button) %>
     </p>
 
 <% end %>

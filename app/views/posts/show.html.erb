@@ -1,2 +1,6 @@
 <h1><%= @post.title %></h1>
-<p><%= simple_format(@post.content) %></p>
+<p class="delete-button"><%= link_to "編集", edit_post_path(@post) %></p>
+<p class="delete-button"><%= link_to "削除", post_path(@post) , data:{turbo_method: "delete", turbo_confirm: "削除してもいいですか？"} %></p>
+
+<% linked_content = Rinku.auto_link(@post.content) %>
+<p><%= simple_format(linked_content).html_safe %></p>
